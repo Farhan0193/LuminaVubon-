@@ -279,4 +279,44 @@ cursor:pointer;
 
 .newsletter button:hover{
 background:#084298;
+}.footer{
+background:#0f172a;
+color:white;
+padding:50px 20px 20px;
+margin-top:40px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
+gap:30px;
+}
+
+.footer-col{
+flex:1;
+min-width:220px;
+}
+
+.footer-col h3{
+margin-bottom:15px;
+color:#ffd43b;
+}
+
+.footer-col a{
+color:#ddd;
+text-decoration:none;
+line-height:2;
+}
+
+.footer-col a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+margin-top:20px;
+font-size:14px;
 }
