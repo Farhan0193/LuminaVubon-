@@ -63,4 +63,7 @@ topBtn.onclick = function(){
     });
 }function toggleMenu() {
     document.getElementById("navbar").classList.toggle("active");
+}function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
 }
