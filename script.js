@@ -61,4 +61,6 @@ topBtn.onclick = function(){
         top:0,
         behavior:"smooth"
     });
+}function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
 }
