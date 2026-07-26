@@ -79,3 +79,49 @@ body{
         margin-bottom:10px;
     }
 }
+.featured{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.featured h2{
+    margin-bottom:30px;
+    color:#0d6efd;
+}
+
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:300px;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.card p{
+    margin-bottom:15px;
+}
+
+.card a{
+    text-decoration:none;
+    color:white;
+    background:#0d6efd;
+    padding:10px 15px;
+    border-radius:5px;
+}
