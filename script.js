@@ -39,4 +39,38 @@ if (darkModeBtn) {
 
     });
 
+}const searchInput = document.getElementById("searchInput");
+
+if (searchInput) {
+    searchInput.addEventListener("keypress", function (e) {
+
+        if (e.key === "Enter") {
+
+            const keyword = this.value.toLowerCase().trim();
+
+            if (keyword === "technology") {
+                window.location.href = "technology.html";
+            }
+            else if (keyword === "ai") {
+                window.location.href = "ai-tools.html";
+            }
+            else if (keyword === "freelancing") {
+                window.location.href = "freelancing.html";
+            }
+            else if (keyword === "health") {
+                window.location.href = "health.html";
+            }
+            else if (keyword === "beauty") {
+                window.location.href = "beauty.html";
+            }
+            else if (keyword === "fitness") {
+                window.location.href = "fitness.html";
+            }
+            else{
+                alert("No article found.");
+            }
+
+        }
+
+    });
 }
