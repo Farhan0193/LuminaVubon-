@@ -457,11 +457,17 @@ display:flex;
 }
 
 .navbar a{
-padding:12px;
+display:block;
+padding:14px 20px 14px 35px;
 text-decoration:none;
 color:#fff;
 font-size:18px;
 border-bottom:1px solid rgba(255,255,255,.15);
+transition:0.3s;
+}.navbar a:hover{
+background:rgba(255,255,255,.15);
+padding-left:45px;
+border-radius:8px;
 }
 
 .navbar a:last-child{
