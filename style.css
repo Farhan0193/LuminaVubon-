@@ -486,4 +486,32 @@ max-width:600px;
 .menu-toggle{
 display:block;
 }
+}/* ===== DARK MODE ===== */
+
+.dark-mode{
+background:#121212;
+color:#fff;
+}
+
+.dark-mode .card,
+.dark-mode .sidebar,
+.dark-mode .newsletter{
+background:#1f1f1f;
+color:#fff;
+}
+
+.dark-mode .hero{
+background:#1b1b1b;
+}
+
+.dark-mode .header{
+background:#111827;
+}
+
+.dark-mode .footer{
+background:#000;
+}
+
+.dark-mode a{
+color:#ffd43b;
 }
