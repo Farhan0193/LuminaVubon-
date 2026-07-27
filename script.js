@@ -42,43 +42,31 @@ if (darkModeBtn) {
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
-    searchInput.addEventListener("keydown", function (e) {
+    searchInput.addEventListener("keydown", function(e) {
 
         if (e.key === "Enter") {
 
             e.preventDefault();
+            e.stopPropagation();
 
-            const keyword = this.value.toLowerCase().trim();
+            const keyword = this.value.trim().toLowerCase();
 
-            switch (keyword) {
+            if (!keyword) return;
 
-                case "technology":
-                    window.location.href = "technology.html";
-                    break;
+            const pages = {
+                "technology":"technology.html",
+                "ai":"ai-tools.html",
+                "ai tools":"ai-tools.html",
+                "freelancing":"freelancing.html",
+                "health":"health.html",
+                "beauty":"beauty.html",
+                "fitness":"fitness.html"
+            };
 
-                case "ai":
-                case "ai tools":
-                    window.location.href = "ai-tools.html";
-                    break;
-
-                case "freelancing":
-                    window.location.href = "freelancing.html";
-                    break;
-
-                case "health":
-                    window.location.href = "health.html";
-                    break;
-
-                case "beauty":
-                    window.location.href = "beauty.html";
-                    break;
-
-                case "fitness":
-                    window.location.href = "fitness.html";
-                    break;
-
-                default:
-                    alert("No article found.");
+            if (pages[keyword]) {
+                window.location.href = pages[keyword];
+            } else {
+                alert("No article found.");
             }
         }
     });
