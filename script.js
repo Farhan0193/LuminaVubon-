@@ -15,10 +15,28 @@ const scrolled = (winScroll / height) * 100;
 document.getElementById("progress-bar").style.width =
 scrolled + "%";
 
-}const darkBtn = document.getElementById("darkModeBtn");
+}// ===== Mobile Menu =====
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
 
-if (darkBtn) {
-    darkBtn.addEventListener("click", function () {
+// ===== Dark / Light Mode =====
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+if (darkModeBtn) {
+
+    darkModeBtn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
         document.body.classList.toggle("dark-mode");
+
+        if(document.body.classList.contains("dark-mode")){
+            darkModeBtn.innerHTML = "☀️ Light Mode";
+        }else{
+            darkModeBtn.innerHTML = "🌙 Dark Mode";
+        }
+
     });
+
 }
