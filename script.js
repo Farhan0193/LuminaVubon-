@@ -15,18 +15,10 @@ const scrolled = (winScroll / height) * 100;
 document.getElementById("progress-bar").style.width =
 scrolled + "%";
 
-});const darkBtn = document.getElementById("darkModeBtn");
+}const darkBtn = document.getElementById("darkModeBtn");
 
-if(darkBtn){
-darkBtn.addEventListener("click",function(){
-
-document.body.classList.toggle("dark-mode");
-
-if(document.body.classList.contains("dark-mode")){
-darkBtn.innerHTML="☀️ Light Mode";
-}else{
-darkBtn.innerHTML="🌙 Dark Mode";
-}
-
-});
+if (darkBtn) {
+    darkBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+    });
 }
