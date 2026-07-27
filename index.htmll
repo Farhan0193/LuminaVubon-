@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechEarn | Technology, AI, Freelancing & Online Earning</title>
+
+<meta name="description" content="TechEarn provides Technology, AI Tools, Freelancing, Health, Beauty, Fitness and Online Earning tutorials.">
+
+<meta name="keywords" content="Technology, AI, Freelancing, Online Earning, Cybersecurity, Health, Beauty, Fitness">
+
+<meta name="author" content="TechEarn">
+
+<meta name="robots" content="index,follow">
+
+<link rel="icon" href="favicon.png">
+
+<link rel="stylesheet" href="style.css">
+
+<meta name="google-site-verification" content="7ldZwY0QnB_hLcEuHy2-d8waA8UAzzUAH4G7qx9-FnM">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4MBD2HFC3B"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config','G-4MBD2HFC3B');
+</script>
+
+</head>
+
+<body>
+
+<div id="progress-bar"></div>
+
+<header class="header">
+
+<div class="container">
+
+<div class="logo">
+<h1>TechEarn</h1>
+</div>
+
+<div class="header-tools">
+
+<input
+type="text"
+id="searchInput"
+class="search-input"
+placeholder="🔍 Search Articles...">
+
+<div
+class="menu-toggle"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+</div>
+
+<nav
+class="navbar"
+id="navbar">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="technology.html">💻 Technology</a>
+
+<a href="ai-tools.html">🤖 AI Tools</a>
+
+<a href="freelancing.html">💼 Freelancing</a>
+
+<a href="health.html">❤️ Health</a>
+
+<a href="beauty.html">💄 Beauty</a>
+
+<a href="fitness.html">💪 Fitness</a>
+
+<a href="about.html">ℹ️ About</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<a href="#" id="darkModeBtn">🌙 Dark Mode</a>
+
+</nav>
+
+</div>
+
+</header><section class="hero">
+
+<div class="container">
+
+<h2>Learn Technology & Earn Online</h2>
+
+<p>
+Master Technology, AI Tools, Freelancing, Cybersecurity, Online Earning, Health and Fitness with easy step-by-step guides.
+</p>
+
+<div class="hero-buttons">
+
+<a href="technology.html" class="btn btn-primary">
+🚀 Explore Articles
+</a>
+
+<a href="freelancing.html" class="btn btn-secondary">
+💼 Start Freelancing
+</a>
+
+</div>
+
+</div>
+
+</section><section class="featured">
+
+<div class="container">
+
+<h2>🔥 Featured Articles</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>🤖 Best Free AI Tools 2026</h3>
+<p>
+Discover the best free AI tools for students, freelancers and content creators.
+</p>
+<a href="best-free-ai-tools-2026.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+<div class="card">
+<h3>💼 How to Start Freelancing</h3>
+<p>
+Complete beginner guide to start earning from Fiverr, Upwork and other platforms.
+</p>
+<a href="how-to-start-freelancing.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+<div class="card">
+<h3>🛡 Cybersecurity Basics</h3>
+<p>
+Learn ethical hacking, networking and cybersecurity from beginner level.
+</p>
+<a href="technology.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section><section class="latest">
+
+<div class="container">
+
+<h2>📰 Latest Articles</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>📱 Best Android Apps 2026</h3>
+<p>
+Top free Android apps to improve productivity and daily life.
+</p>
+<a href="technology.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+<div class="card">
+<h3>💰 Affiliate Marketing Guide</h3>
+<p>
+Learn how beginners can earn online through affiliate marketing.
+</p>
+<a href="freelancing.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+<div class="card">
+<h3>❤️ Healthy Lifestyle Tips</h3>
+<p>
+Simple daily habits to stay healthy while working online.
+</p>
+<a href="health.html" class="card-btn">
+Read More →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="ad-section">
+
+<div class="container">
+
+<h2>📢 Sponsored Advertisement</h2>
+
+<div class="ad-box">
+
+<!-- Adsterra Banner Code Here -->
+
+</div>
+
+</div>
+
+</section><section class="extras">
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>🔥 Popular Posts</h2>
+
+<ul>
+
+<li><a href="best-free-ai-tools-2026.html">🤖 Best Free AI Tools 2026</a></li>
+
+<li><a href="how-to-start-freelancing.html">💼 How to Start Freelancing</a></li>
+
+<li><a href="technology.html">🛡 Cybersecurity Basics</a></li>
+
+<li><a href="ai-tools.html">⚡ Latest AI Tools</a></li>
+
+<li><a href="health.html">❤️ Healthy Lifestyle Tips</a></li>
+
+</ul>
+
+<h2>📂 Categories</h2>
+
+<ul>
+
+<li><a href="technology.html">Technology</a></li>
+
+<li><a href="ai-tools.html">AI Tools</a></li>
+
+<li><a href="freelancing.html">Freelancing</a></li>
+
+<li><a href="health.html">Health</a></li>
+
+<li><a href="beauty.html">Beauty</a></li>
+
+<li><a href="fitness.html">Fitness</a></li>
+
+</ul>
+
+</div>
+
+<div class="newsletter">
+
+<h2>📧 Subscribe Newsletter</h2>
+
+<p>
+Get the latest Technology, AI, Freelancing and Online Earning articles directly in your inbox.
+</p>
+
+<input
+type="email"
+placeholder="Enter your email address">
+
+<button>
+Subscribe
+</button>
+
+</div>
+
+</div>
+
+</section><footer class="footer">
+
+<div class="container">
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h3>TechEarn</h3>
+<p>
+Your trusted source for Technology, AI, Freelancing and Online Earning.
+</p>
+</div>
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="technology.html">Technology</a>
+<a href="ai-tools.html">AI Tools</a>
+<a href="freelancing.html">Freelancing</a>
+<a href="health.html">Health</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Legal</h3>
+
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+<a href="disclaimer.html">Disclaimer</a>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+© 2026 TechEarn. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+<!-- Adsterra Script -->
+<script src="https://pl30526778.effectivecpmnetwork.com/78/f4/b8/78f4b8148c4b14965a62bee13a09fd3c.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
