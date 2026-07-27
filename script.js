@@ -44,7 +44,11 @@ if (darkModeBtn) {
 if (searchInput) {
     searchInput.addEventListener("keypress", function (e) {
 
-        if (e.key === "Enter") {
+ if (e.key === "Enter") {
+
+    e.preventDefault();
+
+    const keyword = this.value.toLowerCase().trim();
 
             const keyword = this.value.toLowerCase().trim();
 
