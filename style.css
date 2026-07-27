@@ -353,3 +353,13 @@ margin-top:10px;
 }
 
 }
+#progress-bar{
+position:fixed;
+top:0;
+left:0;
+width:0%;
+height:4px;
+background:#00d4ff;
+z-index:99999;
+transition:width .2s;
+}
