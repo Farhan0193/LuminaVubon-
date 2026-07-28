@@ -130,89 +130,159 @@ border-bottom:none;
 .navbar a:hover{
 background:rgba(255,255,255,.12);
 padding-left:35px;
-}
-}
-
-/* ===== MOBILE ===== */
-
-@media(min-width:768px){
-
-.logo h1{
-font-size:42px;
-}
-
-.header-tools{
-max-width:900px;
-margin:auto;
-}
-
-.search-box{
-max-width:800px;
-}
-
-}/* ===== HERO SECTION ===== */
+}/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
 background:linear-gradient(135deg,#0d6efd,#38bdf8,#06b6d4);
 padding:90px 20px;
 text-align:center;
 border-radius:0 0 30px 30px;
+color:#fff;
 }
 
 .hero h2{
+font-size:44px;
+font-weight:700;
+margin-bottom:20px;
+background:#fff;
+color:#111;
 display:inline-block;
-background:#ffffff;
-color:#000;
 padding:15px 30px;
 border-radius:15px;
-font-size:42px;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+animation:fadeDown .8s ease;
 }
 
 .hero p{
-font-size:18px;
-color:#ffffff;
-max-width:700px;
-margin:20px auto;
+max-width:750px;
+margin:20px auto 35px;
+font-size:20px;
+line-height:1.8;
+animation:fadeUp 1s ease;
 }
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
 display:inline-block;
-padding:14px 35px;
-background:#ffd43b;
-color:#000;
-text-decoration:none;
+padding:14px 30px;
 border-radius:50px;
-font-weight:bold;
+text-decoration:none;
+font-size:17px;
+font-weight:700;
 transition:.3s;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-.btn:hover{
-transform:translateY(-5px);
-background:#ffea70;
+.btn-primary{
+background:#ffd43b;
+color:#111;
 }
 
-/* ===== SECTION ===== */
+.btn-primary:hover{
+background:#ffe066;
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+background:#fff;
+color:#0d6efd;
+}
+
+.btn-secondary:hover{
+background:#f1f5f9;
+transform:translateY(-4px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+   MOBILE HERO
+========================= */
+
+@media(max-width:768px){
+
+.hero{
+padding:70px 20px;
+}
+
+.hero h2{
+font-size:30px;
+padding:12px 20px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:90%;
+max-width:320px;
+text-align:center;
+}
+/* =========================
+   SECTION TITLE
+========================= */
 
 .featured,
 .latest,
 .ad-section,
 .extras{
-padding:60px 20px;
+padding:70px 20px;
 }
 
 .featured h2,
-.latest h2{
+.latest h2,
+.ad-section h2{
 text-align:center;
-color:#0d6efd;
-margin-bottom:30px;
 font-size:34px;
+color:#0d6efd;
+margin-bottom:35px;
+font-weight:700;
 }
 
-/* ===== CARD ===== */
+/* =========================
+   CARD CONTAINER
+========================= */
 
 .card-container{
 display:grid;
@@ -220,54 +290,112 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
+/* =========================
+   CARD
+========================= */
+
 .card{
 background:#fff;
+border-radius:18px;
 padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.35s;
 }
 
 .card:hover{
 transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .card h3{
+font-size:22px;
 color:#0d6efd;
 margin-bottom:15px;
 }
 
 .card p{
+font-size:16px;
+color:#555;
 margin-bottom:20px;
+line-height:1.7;
 }
 
-.card a{
+.card-btn{
 display:inline-block;
-padding:10px 18px;
+padding:10px 22px;
 background:#0d6efd;
 color:#fff;
 text-decoration:none;
 border-radius:8px;
+font-weight:bold;
+transition:.3s;
 }
 
-.card a:hover{
+.card-btn:hover{
 background:#084298;
-}/* ===== SIDEBAR & NEWSLETTER ===== */
+}
+
+/* =========================
+   ADVERTISEMENT
+========================= */
+
+.ad-box{
+width:100%;
+max-width:728px;
+height:90px;
+margin:25px auto;
+border:2px dashed #0d6efd;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#fff;
+font-weight:bold;
+color:#666;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark-mode .card{
+background:#1f2937;
+}
+
+.dark-mode .card p{
+color:#ddd;
+}
+
+.dark-mode .card h3{
+color:#60a5fa;
+}
+
+.dark-mode .ad-box{
+background:#1f2937;
+color:#ddd;
+border-color:#60a5fa;
+}/* =========================
+   SIDEBAR & NEWSLETTER
+========================= */
 
 .extras{
-display:flex;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:2fr 1fr;
 gap:30px;
 }
 
 .sidebar,
 .newsletter{
-flex:1;
-min-width:300px;
 background:#fff;
 padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.sidebar h2,
+.newsletter h2{
+margin-bottom:20px;
+color:#0d6efd;
 }
 
 .sidebar ul{
@@ -280,34 +408,50 @@ margin:12px 0;
 
 .sidebar a{
 text-decoration:none;
+color:#333;
+transition:.3s;
+}
+
+.sidebar a:hover{
 color:#0d6efd;
+padding-left:8px;
 }
 
 .newsletter input{
 width:100%;
-padding:12px;
+padding:14px;
+margin:15px 0;
 border:1px solid #ddd;
 border-radius:8px;
-margin:15px 0;
+font-size:16px;
 }
 
 .newsletter button{
 width:100%;
-padding:12px;
+padding:14px;
 border:none;
 background:#0d6efd;
 color:#fff;
+font-size:16px;
+font-weight:bold;
 border-radius:8px;
 cursor:pointer;
+transition:.3s;
 }
 
-/* ===== FOOTER ===== */
+.newsletter button:hover{
+background:#084298;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
+margin-top:60px;
 background:#111827;
 color:#fff;
 padding:50px 20px;
-margin-top:50px;
 }
 
 .footer-container{
@@ -333,76 +477,56 @@ color:#fff;
 }
 
 .copyright{
-text-align:center;
 margin-top:30px;
+text-align:center;
 font-size:14px;
 }
 
-/* ===== PROGRESS BAR ===== */
-
-#progress-bar{
-position:fixed;
-top:0;
-left:0;
-width:0%;
-height:4px;
-background:#00d4ff;
-z-index:99999;
-}
-
-/* ===== DARK MODE ===== */
+/* =========================
+   DARK MODE
+========================= */
 
 .dark-mode{
 background:#121212;
 color:#fff;
 }
 
-.dark-mode .card,
 .dark-mode .sidebar,
 .dark-mode .newsletter{
-background:#1f1f1f;
-color:#fff;
+background:#1f2937;
 }
 
 .dark-mode .footer{
 background:#000;
 }
 
-.dark-mode .header{
+.dark-mode .newsletter input{
 background:#111827;
+color:#fff;
+border:1px solid #555;
 }
 
-/* ===== MOBILE ===== */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
-.hero h2{
-font-size:28px;
-padding:12px 20px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.search-box{
-width:100%;
-}
-
-.menu-toggle{
-font-size:28px;
-}
-
-.card{
-width:100%;
+.extras{
+grid-template-columns:1fr;
 }
 
 .footer-container{
 grid-template-columns:1fr;
 }
 
-.extras{
-flex-direction:column;
+.logo h1{
+font-size:30px;
 }
 
+.search-input{
+font-size:15px;
+}
+
+}
 }
