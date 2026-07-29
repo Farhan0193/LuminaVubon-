@@ -479,8 +479,6 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
-}
-
 /* ==========================
    DESKTOP
 ========================== */
@@ -492,4 +490,18 @@ max-width:350px;
 margin:15px auto 0;
 }
 
+}.search-btn{
+padding:14px 18px;
+border:none;
+border-radius:30px;
+background:#ffd43b;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.search-btn:hover{
+background:#ffea70;
+}
 }
