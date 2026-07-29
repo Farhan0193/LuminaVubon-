@@ -1,153 +1,185 @@
-/* ===========================
-   MOBILE MENU
-=========================== */
+// ==========================
+// Mobile Menu
+// ==========================
 
 function toggleMenu(){
 
-    const navbar = document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 
-    if(navbar){
-        navbar.classList.toggle("active");
-    }
+navbar.classList.toggle("active");
 
 }
 
 
-/* ===========================
-   DARK MODE
-=========================== */
+
+// ==========================
+// Dark Mode
+// ==========================
 
 const darkBtn = document.getElementById("darkModeBtn");
 
+
 if(darkBtn){
 
-    darkBtn.addEventListener("click",function(){
+darkBtn.addEventListener("click", function(e){
 
-        document.body.classList.toggle("dark-mode");
+e.preventDefault();
 
-        if(document.body.classList.contains("dark-mode")){
+document.body.classList.toggle("dark-mode");
 
-            darkBtn.innerHTML="☀️";
 
-            localStorage.setItem("theme","dark");
 
-        }else{
+if(document.body.classList.contains("dark-mode")){
 
-            darkBtn.innerHTML="🌙";
+darkBtn.innerHTML="☀️ Light";
 
-            localStorage.setItem("theme","light");
-
-        }
-
-    });
+localStorage.setItem("theme","dark");
 
 }
 
+else{
 
-/* LOAD SAVED THEME */
+darkBtn.innerHTML="🌙 Dark";
 
-if(localStorage.getItem("theme")=="dark"){
-
-    document.body.classList.add("dark-mode");
-
-    if(darkBtn){
-        darkBtn.innerHTML="☀️";
-    }
+localStorage.setItem("theme","light");
 
 }
 
-
-/* ===========================
-   READING PROGRESS BAR
-=========================== */
-
-window.addEventListener("scroll",function(){
-
-    let scrollTop =
-    document.documentElement.scrollTop;
-
-    let height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-
-    let progress =
-    (scrollTop / height) * 100;
-
-
-    let bar=document.getElementById("progress-bar");
-
-    if(bar){
-        bar.style.width=progress+"%";
-    }
 
 });
 
 
-/* ===========================
-   SEARCH
-=========================== */
+}
 
-const searchInput =
-document.getElementById("searchInput");
+
+
+// Save Dark Mode
+
+if(localStorage.getItem("theme") === "dark"){
+
+document.body.classList.add("dark-mode");
+
+
+if(darkBtn){
+
+darkBtn.innerHTML="☀️ Light";
+
+}
+
+}
+
+
+
+
+// ==========================
+// Reading Progress Bar
+// ==========================
+
+
+window.addEventListener("scroll",function(){
+
+
+let scrollTop = document.documentElement.scrollTop;
+
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+
+let progress = (scrollTop / height) * 100;
+
+
+document.getElementById("progress-bar").style.width = progress + "%";
+
+
+});
+
+
+
+
+// ==========================
+// Search Button
+// ==========================
+
+
+const searchBtn = document.getElementById("searchBtn");
+
+
+if(searchBtn){
+
+
+searchBtn.addEventListener("click",function(){
+
+
+let search = document.getElementById("searchInput").value.toLowerCase();
+
+
+
+if(search.trim() !== ""){
+
+
+window.location.href = "search.html?query=" + search;
+
+
+}
+
+
+});
+
+
+}
+
+
+
+
+// ==========================
+// Enter Key Search
+// ==========================
+
+
+const searchInput = document.getElementById("searchInput");
 
 
 if(searchInput){
 
-searchInput.addEventListener("keyup",function(){
 
-    let value =
-    searchInput.value.toLowerCase();
+searchInput.addEventListener("keypress",function(e){
 
 
-    let posts =
-    document.querySelectorAll(".post");
+if(e.key === "Enter"){
 
 
-    posts.forEach(function(post){
+searchBtn.click();
 
-        let text =
-        post.innerText.toLowerCase();
-
-
-        if(text.includes(value)){
-
-            post.style.display="block";
-
-        }else{
-
-            post.style.display="none";
-
-        }
-
-    });
-
-
-});
 
 }
 
 
-/* ===========================
-   CLOSE MENU AFTER CLICK
-=========================== */
-
-const navLinks =
-document.querySelectorAll(".navbar a");
+});
 
 
-navLinks.forEach(function(link){
+}
 
-    link.addEventListener("click",function(){
 
-        const navbar =
-        document.getElementById("navbar");
 
-        if(navbar){
 
-            navbar.classList.remove("active");
 
-        }
+// ==========================
+// Simple Newsletter Alert
+// ==========================
 
-    });
+
+const subscribeBtn = document.querySelector(".newsletter button");
+
+
+if(subscribeBtn){
+
+
+subscribeBtn.addEventListener("click",function(){
+
+
+alert("Thank you for subscribing to LuminaVubon🌐");
+
 
 });
+
+
+}
