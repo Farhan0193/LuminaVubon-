@@ -501,4 +501,12 @@ transition:.3s;
 .search-btn:hover{
 background:#ffea70;
 }
+}@media (max-width:768px){
+...
+@media (min-width:769px){
+...
+}
+.search-btn{
+...
+}
 }
