@@ -42,17 +42,31 @@ background:#0d6efd;
 padding:15px 0;
 box-shadow:0 3px 12px rgba(0,0,0,.15);
 }
-
-.logo{
-text-align:center;
+.logo-bar{
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 margin-bottom:15px;
 }
 
-.logo h1{
+.logo-bar h1{
 color:#fff;
 font-size:38px;
-font-weight:bold;
+font-weight:700;
 }
+
+.logo-bar .menu-toggle{
+position:absolute;
+left:0;
+font-size:28px;
+padding:8px 12px;
+background:rgba(255,255,255,.15);
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+}
+
 
 /* ==========================
    HEADER TOOLS
