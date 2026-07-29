@@ -1,56 +1,153 @@
-function toggleMenu() {
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+function toggleMenu(){
+
     const navbar = document.getElementById("navbar");
-    navbar.classList.toggle("active");
-}
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
 
-function searchArticle(){
-
-const keyword = searchInput.value.trim().toLowerCase();
-
-switch(keyword){
-
-case "technology":
-window.location.href="technology.html";
-break;
-
-case "ai":
-case "ai tools":
-window.location.href="ai-tools.html";
-break;
-
-case "freelancing":
-window.location.href="freelancing.html";
-break;
-
-case "health":
-window.location.href="health.html";
-break;
-
-case "beauty":
-window.location.href="beauty.html";
-break;
-
-case "fitness":
-window.location.href="fitness.html";
-break;
-
-default:
-alert("No article found.");
-}
+    if(navbar){
+        navbar.classList.toggle("active");
+    }
 
 }
 
-searchBtn.addEventListener("click",searchArticle);
 
-searchInput.addEventListener("keydown",function(e){
+/* ===========================
+   DARK MODE
+=========================== */
 
-if(e.key==="Enter"){
+const darkBtn = document.getElementById("darkModeBtn");
 
-e.preventDefault();
-searchArticle();
+if(darkBtn){
+
+    darkBtn.addEventListener("click",function(){
+
+        document.body.classList.toggle("dark-mode");
+
+        if(document.body.classList.contains("dark-mode")){
+
+            darkBtn.innerHTML="☀️";
+
+            localStorage.setItem("theme","dark");
+
+        }else{
+
+            darkBtn.innerHTML="🌙";
+
+            localStorage.setItem("theme","light");
+
+        }
+
+    });
 
 }
+
+
+/* LOAD SAVED THEME */
+
+if(localStorage.getItem("theme")=="dark"){
+
+    document.body.classList.add("dark-mode");
+
+    if(darkBtn){
+        darkBtn.innerHTML="☀️";
+    }
+
+}
+
+
+/* ===========================
+   READING PROGRESS BAR
+=========================== */
+
+window.addEventListener("scroll",function(){
+
+    let scrollTop =
+    document.documentElement.scrollTop;
+
+    let height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+    let progress =
+    (scrollTop / height) * 100;
+
+
+    let bar=document.getElementById("progress-bar");
+
+    if(bar){
+        bar.style.width=progress+"%";
+    }
+
+});
+
+
+/* ===========================
+   SEARCH
+=========================== */
+
+const searchInput =
+document.getElementById("searchInput");
+
+
+if(searchInput){
+
+searchInput.addEventListener("keyup",function(){
+
+    let value =
+    searchInput.value.toLowerCase();
+
+
+    let posts =
+    document.querySelectorAll(".post");
+
+
+    posts.forEach(function(post){
+
+        let text =
+        post.innerText.toLowerCase();
+
+
+        if(text.includes(value)){
+
+            post.style.display="block";
+
+        }else{
+
+            post.style.display="none";
+
+        }
+
+    });
+
+
+});
+
+}
+
+
+/* ===========================
+   CLOSE MENU AFTER CLICK
+=========================== */
+
+const navLinks =
+document.querySelectorAll(".navbar a");
+
+
+navLinks.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        const navbar =
+        document.getElementById("navbar");
+
+        if(navbar){
+
+            navbar.classList.remove("active");
+
+        }
+
+    });
 
 });
