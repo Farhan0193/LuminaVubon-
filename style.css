@@ -93,23 +93,6 @@ box-shadow:0 2px 10px rgba(0,0,0,.15);
 box-shadow:0 0 10px rgba(255,255,255,.8);
 }
 
-/* ==========================
-   MENU BUTTON
-========================== */
-
-.menu-toggle{
-font-size:28px;
-padding:8px 14px;
-background:rgba(255,255,255,.15);
-color:#fff;
-border-radius:8px;
-cursor:pointer;
-transition:.3s;
-}
-
-.menu-toggle:hover{
-background:rgba(255,255,255,.25);
-}
 
 /* ==========================
    NAVIGATION
