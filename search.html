@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search | LuminaVubon</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<div class="logo-bar">
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<h1>LuminaVubon🌐</h1>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="featured">
+
+<div class="container">
+
+<h2>🔍 Search Result</h2>
+
+<div id="searchResult" class="card"></div>
+
+</div>
+
+</section><script>
+
+const params = new URLSearchParams(window.location.search);
+const query = (params.get("query") || "").toLowerCase().trim();
+
+const result = document.getElementById("searchResult");
+
+const pages = {
+
+"news": {
+title:"📰 News",
+link:"news.html"
+},
+
+"technology": {
+title:"💻 Technology",
+link:"technology.html"
+},
+
+"ai": {
+title:"🤖 AI Tools",
+link:"ai-tools.html"
+},
+
+"ai tools": {
+title:"🤖 AI Tools",
+link:"ai-tools.html"
+},
+
+"health": {
+title:"❤️ Health",
+link:"health.html"
+},
+
+"food": {
+title:"🍔 Food",
+link:"food.html"
+},
+
+"lifestyle": {
+title:"🌿 Lifestyle",
+link:"lifestyle.html"
+},
+
+"earning": {
+title:"💰 Earning Tips",
+link:"earning-tips.html"
+},
+
+"earning tips": {
+title:"💰 Earning Tips",
+link:"earning-tips.html"
+}
+
+};
+
+if(pages[query]){
+
+result.innerHTML=`
+
+<h3>${pages[query].title}</h3>
+
+<p>Click below to open this page.</p>
+
+<a class="card-btn" href="${pages[query].link}">
+
+Open Page →
+
+</a>
+
+`;
+
+}else{
+
+result.innerHTML=`
+
+<h3>❌ No Result Found</h3>
+
+<p>No page matched "<b>${query}</b>".</p>
+
+`;
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
