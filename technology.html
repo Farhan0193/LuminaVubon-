@@ -1,86 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technology - TechEarn</title>
-<meta name="description" content="Latest technology news, AI tools, gadgets and tech guides.">
+
+<title>Technology News | TechEarn</title>
+
+<meta name="description" content="Latest Technology News, AI, Cybersecurity, Gadgets, Programming and Innovation.">
+
+<meta name="keywords" content="Technology, AI, Cybersecurity, Programming, Gadgets, Tech News">
+
+<meta name="robots" content="index,follow">
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="icon" href="favicon.png">
+
 </head>
 
 <body>
 
+<div id="progress-bar"></div>
+
 <header class="header">
+
 <div class="container">
 
-<div class="logo">
-<h1>TechEarn</h1>
-<p>Technology • AI • Freelancing • Health</p>
+<div class="logo-bar">
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
 </div>
 
-<nav class="navbar">
-<a href="index.html">Home</a>
-<a href="technology.html">Technology</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<h1>TechEarn</h1>
+
+</div>
+
+<div class="header-tools">
+
+<input
+type="text"
+id="searchInput"
+class="search-input"
+placeholder="🔍 Search Technology...">
+
+<button
+id="searchBtn"
+class="search-btn">
+🔍
+</button>
+
+</div>
+
+<nav class="navbar" id="navbar">
+
+<a href="index.html">🏠 Home</a>
+
+<a href="news.html">📰 News</a>
+
+<a href="technology.html">💻 Technology</a>
+
+<a href="ai-tools.html">🤖 AI</a>
+
+<a href="health.html">❤️ Health</a>
+
+<a href="food.html">🍜 Food</a>
+
+<a href="lifestyle.html">🌱 Lifestyle</a>
+
+<a href="earning-tips.html">💰 Earning Tips</a>
+
+<a href="about.html">ℹ About</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<a href="#" id="darkModeBtn">🌙 Dark</a>
+
 </nav>
 
 </div>
+
 </header>
+
+<section class="hero technology-hero">
+
+<div class="container">
+
+<h2>💻 Technology News</h2>
+
+<p>
+
+Latest updates about AI, Programming, Cybersecurity,
+Software, Gadgets and Modern Technology.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="breaking-news">
+
+<div class="container">
+
+<h2>🔥 Breaking Technology News</h2>
+
+<marquee behavior="scroll" direction="left">
+
+Google AI • OpenAI ChatGPT • Microsoft Copilot • Apple Intelligence • Samsung Galaxy • Cybersecurity Alerts • Programming Updates
+
+</marquee>
+
+</div>
+
+</section>
 
 <section class="featured">
 
-<h2>Technology</h2>
+<div class="container">
 
-<div class="card-container">
+<h2>Top Technology Stories</h2>
 
-<div class="card">
-<h3>Top 10 Free AI Tools in 2026</h3>
-<p>Discover powerful AI tools for students, freelancers and professionals.</p>
-<a href="#">Read More</a>
+<div class="card-container"><div class="card">
+
+<h3>🤖 OpenAI launches new ChatGPT features</h3>
+
+<p>
+Explore the latest ChatGPT features, AI models and productivity updates.
+</p>
+
+<a href="https://openai.com/news" target="_blank" class="card-btn">
+Official Source
+</a>
+
 </div>
 
 <div class="card">
-<h3>Best Budget Smartphones</h3>
-<p>Compare affordable smartphones with great performance.</p>
-<a href="#">Read More</a>
+
+<h3>🌍 Google announces new AI technology</h3>
+
+<p>
+Read Google's latest AI announcements and research updates.
+</p>
+
+<a href="https://blog.google/technology/ai/" target="_blank" class="card-btn">
+Official Source
+</a>
+
 </div>
 
 <div class="card">
-<h3>Cybersecurity Basics</h3>
-<p>Learn essential cybersecurity concepts and stay safe online.</p>
-<a href="#">Read More</a>
+
+<h3>🛡 Cybersecurity News</h3>
+
+<p>
+Latest cybersecurity threats, malware reports and online safety news.
+</p>
+
+<a href="https://www.bleepingcomputer.com/" target="_blank" class="card-btn">
+Read News
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📱 Android Updates</h3>
+
+<p>
+Latest Android versions, security patches and developer news.
+</p>
+
+<a href="https://developer.android.com/news" target="_blank" class="card-btn">
+Official Source
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>💻 Microsoft News</h3>
+
+<p>
+Windows, Copilot and Microsoft AI updates.
+</p>
+
+<a href="https://news.microsoft.com/" target="_blank" class="card-btn">
+Official Source
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🍎 Apple News</h3>
+
+<p>
+Latest Apple devices, iPhone and Apple Intelligence updates.
+</p>
+
+<a href="https://www.apple.com/newsroom/" target="_blank" class="card-btn">
+Official Source
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>⚙ GitHub News</h3>
+
+<p>
+GitHub Copilot, open source projects and developer updates.
+</p>
+
+<a href="https://github.blog/" target="_blank" class="card-btn">
+Official Source
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📰 BBC Technology</h3>
+
+<p>
+Read worldwide technology news from BBC.
+</p>
+
+<a href="https://www.bbc.com/news/technology" target="_blank" class="card-btn">
+Read BBC
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🌐 Reuters Technology</h3>
+
+<p>
+Global technology news and business updates.
+</p>
+
+<a href="https://www.reuters.com/technology/" target="_blank" class="card-btn">
+Read Reuters
+</a>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- Adsterra Banner -->
+
 <section class="ad-section">
 
-<h2>Sponsored</h2>
+<div class="container">
+
+<h2>Advertisement</h2>
 
 <div class="ad-box">
-<!-- Adsterra Banner Code -->
+
+<!-- Paste Adsterra Banner Code Here -->
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AdCombo Product -->
+
+<section class="featured">
+
+<div class="container">
+
+<h2>Recommended Product</h2>
+
+<div class="card">
+
+<img src="images/product.jpg" alt="Product" style="width:100%;border-radius:10px;">
+
+<h3>Best Technology Product</h3>
+
+<p>
+
+Replace this image, title, description and button with your AdCombo product.
+
+</p>
+
+<a href="YOUR_ADCOMBO_LINK" target="_blank" class="card-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+</section><section class="extras">
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>🔥 Related Technology News</h2>
+
+<ul>
+
+<li><a href="https://www.bbc.com/news/technology" target="_blank">BBC Technology</a></li>
+
+<li><a href="https://www.reuters.com/technology/" target="_blank">Reuters Technology</a></li>
+
+<li><a href="https://openai.com/news" target="_blank">OpenAI News</a></li>
+
+<li><a href="https://blog.google/technology/" target="_blank">Google Technology</a></li>
+
+<li><a href="https://news.microsoft.com/" target="_blank">Microsoft News</a></li>
+
+<li><a href="https://github.blog/" target="_blank">GitHub Blog</a></li>
+
+<li><a href="https://developer.android.com/news" target="_blank">Android Developers</a></li>
+
+<li><a href="https://www.apple.com/newsroom/" target="_blank">Apple Newsroom</a></li>
+
+<li><a href="https://blogs.nvidia.com/" target="_blank">NVIDIA Blog</a></li>
+
+<li><a href="https://www.intel.com/content/www/us/en/newsroom/home.html" target="_blank">Intel Newsroom</a></li>
+
+</ul>
+
+</div>
+
+<div class="newsletter">
+
+<h2>📧 Subscribe</h2>
+
+<p>
+Receive the latest Technology, AI and Cybersecurity news.
+</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
+
+</div>
+
 </div>
 
 </section>
 
 <footer class="footer">
 
+<div class="container">
+
 <div class="footer-container">
 
 <div class="footer-col">
+
 <h3>TechEarn</h3>
-<p>Technology, AI, Freelancing, Health & Online Earning.</p>
+
+<p>
+Technology, AI, Online Earning and Digital News Portal.
+</p>
+
 </div>
 
 <div class="footer-col">
-<h3>Quick Links</h3>
-<a href="index.html">Home</a><br>
-<a href="technology.html">Technology</a><br>
-<a href="about.html">About</a><br>
+
+<h3>Categories</h3>
+
+<a href="news.html">News</a>
+
+<a href="technology.html">Technology</a>
+
+<a href="ai-tools.html">AI</a>
+
+<a href="health.html">Health</a>
+
+<a href="food.html">Food</a>
+
+<a href="lifestyle.html">Lifestyle</a>
+
+<a href="earning-tips.html">Earning Tips</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Legal</h3>
+
+<a href="about.html">About</a>
+
 <a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy Policy</a>
+
+<a href="terms.html">Terms of Service</a>
+
+<a href="disclaimer.html">Disclaimer</a>
+
 </div>
 
 </div>
@@ -91,9 +415,12 @@
 © 2026 TechEarn. All Rights Reserved.
 </p>
 
+</div>
+
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
