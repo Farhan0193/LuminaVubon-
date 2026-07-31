@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Search | LuminaVubon</title>
@@ -26,6 +27,22 @@
 
 </div>
 
+<div class="header-tools">
+
+<input
+type="text"
+id="searchBox"
+class="search-input"
+placeholder="Search anything...">
+
+<button id="searchBtn" class="search-btn">
+
+🔍
+
+</button>
+
+</div>
+
 </div>
 
 </header>
@@ -34,99 +51,227 @@
 
 <div class="container">
 
-<h2>🔍 Search Result</h2>
+<h2>🔍 Search Results</h2>
 
-<div id="searchResult" class="card"></div>
+<div id="results" class="card-container">
+
+</div>
 
 </div>
 
 </section><script>
 
-const params = new URLSearchParams(window.location.search);
-const query = (params.get("query") || "").toLowerCase().trim();
+const data = [
 
-const result = document.getElementById("searchResult");
-
-const pages = {
-
-"news": {
-title:"📰 News",
-link:"news.html"
+{
+title:"📰 LuminaVubon News",
+keywords:["news","world","headline","breaking"],
+url:"news.html"
 },
 
-"technology": {
+{
 title:"💻 Technology",
-link:"technology.html"
+keywords:["technology","tech","computer","software"],
+url:"technology.html"
 },
 
-"ai": {
+{
 title:"🤖 AI Tools",
-link:"ai-tools.html"
+keywords:["ai","chatgpt","gemini","claude","copilot","ai tools"],
+url:"ai-tools.html"
 },
 
-"ai tools": {
-title:"🤖 AI Tools",
-link:"ai-tools.html"
-},
-
-"health": {
+{
 title:"❤️ Health",
-link:"health.html"
+keywords:["health","medical","fitness"],
+url:"health.html"
 },
 
-"food": {
+{
 title:"🍔 Food",
-link:"food.html"
+keywords:["food","recipe","nutrition"],
+url:"food.html"
 },
 
-"lifestyle": {
+{
 title:"🌿 Lifestyle",
-link:"lifestyle.html"
+keywords:["lifestyle","life","travel"],
+url:"lifestyle.html"
 },
 
-"earning": {
+{
 title:"💰 Earning Tips",
-link:"earning-tips.html"
+keywords:["earning","earning tips","affiliate","freelancing","income"],
+url:"earning-tips.html"
 },
 
-"earning tips": {
-title:"💰 Earning Tips",
-link:"earning-tips.html"
+{
+title:"🌍 BBC News",
+keywords:["bbc","bbc news"],
+url:"https://www.bbc.com/news"
+},
+
+{
+title:"🌍 Reuters",
+keywords:["reuters"],
+url:"https://www.reuters.com/"
+},
+
+{
+title:"🌍 CNN",
+keywords:["cnn"],
+url:"https://edition.cnn.com/"
+},
+
+{
+title:"🤖 ChatGPT",
+keywords:["chatgpt","openai"],
+url:"https://chatgpt.com/"
+},
+
+{
+title:"🤖 Google Gemini",
+keywords:["gemini","google ai"],
+url:"https://gemini.google.com/"
+},
+
+{
+title:"🤖 Claude AI",
+keywords:["claude"],
+url:"https://claude.ai/"
+},
+
+{
+title:"💼 Fiverr",
+keywords:["fiverr"],
+url:"https://www.fiverr.com/"
+},
+
+{
+title:"💼 Upwork",
+keywords:["upwork"],
+url:"https://www.upwork.com/"
+},
+
+{
+title:"📢 Adsterra",
+keywords:["adsterra"],
+url:"https://adsterra.com/"
+},
+
+{
+title:"🤝 AdCombo",
+keywords:["adcombo"],
+url:"https://adcombo.com/"
+},
+
+{
+title:"🛒 Amazon Associates",
+keywords:["amazon","affiliate"],
+url:"https://affiliate-program.amazon.com/"
+},
+
+{
+title:"🤝 PartnerStack",
+keywords:["partnerstack"],
+url:"https://partnerstack.com/"
+];const results = document.getElementById("results");
+
+function searchSite(){
+
+const keyword = document.getElementById("searchBox").value.toLowerCase().trim();
+
+results.innerHTML="";
+
+if(keyword===""){
+results.innerHTML="<div class='card'><p>Type something to search...</p></div>";
+return;
 }
 
-};
+let found=false;
 
-if(pages[query]){
+data.forEach(item=>{
 
-result.innerHTML=`
+if(item.keywords.some(k=>k.includes(keyword)||keyword.includes(k))){
 
-<h3>${pages[query].title}</h3>
+found=true;
 
-<p>Click below to open this page.</p>
+results.innerHTML+=`
 
-<a class="card-btn" href="${pages[query].link}">
+<div class="card">
 
-Open Page →
+<h3>${item.title}</h3>
+
+<a href="${item.url}" target="_blank" class="card-btn">
+
+Open →
 
 </a>
 
-`;
-
-}else{
-
-result.innerHTML=`
-
-<h3>❌ No Result Found</h3>
-
-<p>No page matched "<b>${query}</b>".</p>
+</div>
 
 `;
 
 }
+
+});
+
+if(!found){
+
+results.innerHTML=`
+
+<div class="card">
+
+<h3>❌ No Result Found</h3>
+
+<p>Try another keyword.</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+document.getElementById("searchBtn").addEventListener("click",searchSite);
+
+document.getElementById("searchBox").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+searchSite();
+
+}
+
+});// Extra Resources
+
+data.push(
+
+{title:"🎨 Canva",keywords:["canva","design"],url:"https://www.canva.com/"},
+
+{title:"💻 GitHub",keywords:["github","code"],url:"https://github.com/"},
+
+{title:"📺 YouTube",keywords:["youtube","video"],url:"https://www.youtube.com/"},
+
+{title:"💼 LinkedIn",keywords:["linkedin","jobs"],url:"https://www.linkedin.com/"},
+
+{title:"📘 Facebook",keywords:["facebook","fb"],url:"https://www.facebook.com/"},
+
+{title:"🐦 X (Twitter)",keywords:["twitter","x"],url:"https://x.com/"},
+
+{title:"📷 Instagram",keywords:["instagram","ig"],url:"https://www.instagram.com/"},
+
+{title:"💬 Reddit",keywords:["reddit"],url:"https://www.reddit.com/"},
+
+{title:"📚 Stack Overflow",keywords:["stack overflow","stackoverflow"],url:"https://stackoverflow.com/"}
+
+);
 
 </script>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
