@@ -31,9 +31,11 @@
 
 <input
 type="text"
-id="searchBox"
+id="searchInput"
 class="search-input"
-placeholder="Search anything...">
+placeholder="Search News, AI, Health..."
+
+>
 
 <button id="searchBtn" class="search-btn">
 
@@ -53,144 +55,67 @@ placeholder="Search anything...">
 
 <h2>🔍 Search Results</h2>
 
-<div id="results" class="card-container">
+<div id="results"></div>
 
 </div>
 
-</div>
+</section>
 
-</section><script>
+<script>
 
-const data = [
+const searchData=[
 
-{
-title:"📰 LuminaVubon News",
-keywords:["news","world","headline","breaking"],
-url:"news.html"
-},
+{name:"📰 News",url:"news.html",keywords:["news","headline","world"]},
 
-{
-title:"💻 Technology",
-keywords:["technology","tech","computer","software"],
-url:"technology.html"
-},
+{name:"💻 Technology",url:"technology.html",keywords:["technology","tech","computer"]},
 
-{
-title:"🤖 AI Tools",
-keywords:["ai","chatgpt","gemini","claude","copilot","ai tools"],
-url:"ai-tools.html"
-},
+{name:"🤖 AI Tools",url:"ai-tools.html",keywords:["ai","chatgpt","gemini","claude"]},
 
-{
-title:"❤️ Health",
-keywords:["health","medical","fitness"],
-url:"health.html"
-},
+{name:"❤️ Health",url:"health.html",keywords:["health","fitness","medical"]},
 
-{
-title:"🍔 Food",
-keywords:["food","recipe","nutrition"],
-url:"food.html"
-},
+{name:"🍔 Food",url:"food.html",keywords:["food","recipe"]},
 
-{
-title:"🌿 Lifestyle",
-keywords:["lifestyle","life","travel"],
-url:"lifestyle.html"
-},
+{name:"🌿 Lifestyle",url:"lifestyle.html",keywords:["lifestyle","life"]},
 
-{
-title:"💰 Earning Tips",
-keywords:["earning","earning tips","affiliate","freelancing","income"],
-url:"earning-tips.html"
-},
+{name:"💰 Earning Tips",url:"earning-tips.html",keywords:["earning","income","affiliate"]},
 
-{
-title:"🌍 BBC News",
-keywords:["bbc","bbc news"],
-url:"https://www.bbc.com/news"
-},
+{name:"🌍 BBC News",url:"https://www.bbc.com/news",keywords:["bbc"]},
 
-{
-title:"🌍 Reuters",
-keywords:["reuters"],
-url:"https://www.reuters.com/"
-},
+{name:"🌍 Reuters",url:"https://www.reuters.com/",keywords:["reuters"]},
 
-{
-title:"🌍 CNN",
-keywords:["cnn"],
-url:"https://edition.cnn.com/"
-},
+{name:"🌍 CNN",url:"https://edition.cnn.com/",keywords:["cnn"]},
 
-{
-title:"🤖 ChatGPT",
-keywords:["chatgpt","openai"],
-url:"https://chatgpt.com/"
-},
+{name:"🤖 ChatGPT",url:"https://chatgpt.com/",keywords:["chatgpt","openai"]},
 
-{
-title:"🤖 Google Gemini",
-keywords:["gemini","google ai"],
-url:"https://gemini.google.com/"
-},
+{name:"🤖 Google Gemini",url:"https://gemini.google.com/",keywords:["gemini"]},
 
-{
-title:"🤖 Claude AI",
-keywords:["claude"],
-url:"https://claude.ai/"
-},
+{name:"💼 Fiverr",url:"https://www.fiverr.com/",keywords:["fiverr"]},
 
-{
-title:"💼 Fiverr",
-keywords:["fiverr"],
-url:"https://www.fiverr.com/"
-},
+{name:"💼 Upwork",url:"https://www.upwork.com/",keywords:["upwork"]},
 
-{
-title:"💼 Upwork",
-keywords:["upwork"],
-url:"https://www.upwork.com/"
-},
+{name:"📢 Adsterra",url:"https://adsterra.com/",keywords:["adsterra"]},
 
-{
-title:"📢 Adsterra",
-keywords:["adsterra"],
-url:"https://adsterra.com/"
-},
+{name:"🤝 AdCombo",url:"https://adcombo.com/",keywords:["adcombo"]}
 
-{
-title:"🤝 AdCombo",
-keywords:["adcombo"],
-url:"https://adcombo.com/"
-},
-
-{
-title:"🛒 Amazon Associates",
-keywords:["amazon","affiliate"],
-url:"https://affiliate-program.amazon.com/"
-},
-
-{
-title:"🤝 PartnerStack",
-keywords:["partnerstack"],
-url:"https://partnerstack.com/"
-];const results = document.getElementById("results");
+];const results=document.getElementById("results");
 
 function searchSite(){
 
-const keyword = document.getElementById("searchBox").value.toLowerCase().trim();
+const keyword=document.getElementById("searchInput").value.toLowerCase().trim();
 
 results.innerHTML="";
 
 if(keyword===""){
-results.innerHTML="<div class='card'><p>Type something to search...</p></div>";
+
+results.innerHTML="<div class='card'><p>Type something to search.</p></div>";
+
 return;
+
 }
 
 let found=false;
 
-data.forEach(item=>{
+searchData.forEach(item=>{
 
 if(item.keywords.some(k=>k.includes(keyword)||keyword.includes(k))){
 
@@ -200,9 +125,11 @@ results.innerHTML+=`
 
 <div class="card">
 
-<h3>${item.title}</h3>
+<h3>${item.name}</h3>
 
-<a href="${item.url}" target="_blank" class="card-btn">
+<p>Click below to open.</p>
+
+<a href="${item.url}" class="card-btn" target="_blank">
 
 Open →
 
@@ -236,7 +163,7 @@ results.innerHTML=`
 
 document.getElementById("searchBtn").addEventListener("click",searchSite);
 
-document.getElementById("searchBox").addEventListener("keypress",function(e){
+document.getElementById("searchInput").addEventListener("keydown",function(e){
 
 if(e.key==="Enter"){
 
@@ -244,29 +171,7 @@ searchSite();
 
 }
 
-});// Extra Resources
-
-data.push(
-
-{title:"🎨 Canva",keywords:["canva","design"],url:"https://www.canva.com/"},
-
-{title:"💻 GitHub",keywords:["github","code"],url:"https://github.com/"},
-
-{title:"📺 YouTube",keywords:["youtube","video"],url:"https://www.youtube.com/"},
-
-{title:"💼 LinkedIn",keywords:["linkedin","jobs"],url:"https://www.linkedin.com/"},
-
-{title:"📘 Facebook",keywords:["facebook","fb"],url:"https://www.facebook.com/"},
-
-{title:"🐦 X (Twitter)",keywords:["twitter","x"],url:"https://x.com/"},
-
-{title:"📷 Instagram",keywords:["instagram","ig"],url:"https://www.instagram.com/"},
-
-{title:"💬 Reddit",keywords:["reddit"],url:"https://www.reddit.com/"},
-
-{title:"📚 Stack Overflow",keywords:["stack overflow","stackoverflow"],url:"https://stackoverflow.com/"}
-
-);
+});
 
 </script>
 
